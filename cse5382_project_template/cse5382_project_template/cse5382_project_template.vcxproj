@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{87ECCC50-8A45-4365-8A46-48CCD9B85026}</ProjectGuid>
+    <RootNamespace>cse5382_project_template</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\Protobyte;..\..\Protobyte\other_libs\FreeImage.WIN32\Dist;..\..\Protobyte\src;..\..\Protobyte\other_libs\glfw-3.0.4.bin.WIN32\include;..\..\Protobyte\other_libs\glew-1.10.0\glew-1.10.0\include;..\..\Protobyte\other_libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\Protobyte\other_libs\glfw-3.0.4.bin.WIN32\lib-msvc110;..\..\Protobyte\other_libs\glew-1.10.0\glew-1.10.0\lib\Release\Win32;..\..\Protobyte\other_libs\FreeImage.WIN32\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glfw3.lib;freeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\Protobyte;..\..\Protobyte\other_libs\FreeImage.WIN32\Dist;..\..\Protobyte\src;..\..\Protobyte\other_libs\glfw-3.0.4.bin.WIN32\include;..\..\Protobyte\other_libs\glew-1.10.0\glew-1.10.0\include;..\..\Protobyte\other_libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\Protobyte\other_libs\glfw-3.0.4.bin.WIN32\lib-msvc110;..\..\Protobyte\other_libs\glew-1.10.0\glew-1.10.0\lib\Release\Win32;..\..\Protobyte\other_libs\FreeImage.WIN32\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glfw3.lib;freeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Protobyte\appProtobyte\ProtoBaseApp.cpp" />
+    <ClCompile Include="..\..\Protobyte\appProtobyte\ProtoMain.cpp" />
+    <ClCompile Include="..\..\Protobyte\appProtobyte\ProtoPlasm.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoBlock.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoCurve3.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoCylinder.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoFace3.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoFrenetFrame.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoGeom3.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoGroundPlane.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoLight.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoMath.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoShader.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoShape3.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoSphere.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoSpline3.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoTexture.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoToroid.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoTransformFunction.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoTube.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoUtility.cpp" />
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoVertex3.cpp" />
+    <ClCompile Include="..\..\Protobyte\src\MyProg01.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Protobyte\appProtobyte\ProtoBaseApp.h" />
+    <ClInclude Include="..\..\Protobyte\appProtobyte\ProtoPlasm.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoBlock.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoBounds.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoColor3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoColor4.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoConstants.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoCore.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoCurve3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoCylinder.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoDimension2.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoDimension3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoFace3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoFrenetFrame.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoGeom3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoGeomSet.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoGroundPlane.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoImage.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoLight.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMath.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMatrix2.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMatrix3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMatrix4.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoPoint2.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoPoint3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoProtoUtils.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoShader.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoShape3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoSphere.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoSpline3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTexture.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoToroid.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTransformFunction.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTube.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTuple2.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTuple3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoUtility.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVector2.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVector3.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVector4.h" />
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVertex3.h" />
+    <ClInclude Include="..\..\Protobyte\src\MyProg01.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

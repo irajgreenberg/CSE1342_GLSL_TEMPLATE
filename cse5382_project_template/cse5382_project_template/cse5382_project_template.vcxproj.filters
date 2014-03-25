@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\Protobyte\appProtobyte\ProtoBaseApp.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\appProtobyte\ProtoMain.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\appProtobyte\ProtoPlasm.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoBlock.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoCurve3.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoCylinder.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoFace3.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoFrenetFrame.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoGeom3.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoGroundPlane.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoLight.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoMath.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoShader.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoShape3.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoSphere.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoSpline3.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoTexture.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoToroid.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoTransformFunction.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoTube.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoUtility.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoVertex3.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Protobyte\src\MyProg01.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Protobyte\appProtobyte\ProtoBaseApp.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\appProtobyte\ProtoPlasm.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoBlock.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoBounds.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoColor3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoColor4.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoConstants.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoCore.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoCurve3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoCylinder.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoDimension2.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoDimension3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoFace3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoFrenetFrame.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoGeom3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoGeomSet.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoGroundPlane.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoImage.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoLight.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMath.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMatrix2.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMatrix4.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoPoint2.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoPoint3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoProtoUtils.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoShader.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoShape3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoSphere.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoSpline3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTexture.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoToroid.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTransformFunction.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTube.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTuple2.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoTuple3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoUtility.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVector2.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVector3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVector4.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVertex3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMatrix3.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Protobyte\src\MyProg01.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="app">
+      <UniqueIdentifier>{ca5a3c09-0ea4-4fa7-9795-7916eab56bbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{03b2c6ce-4b3d-4b6a-a45a-7df420fdf438}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{fee2493c-71a8-4370-8453-2093177cd5b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

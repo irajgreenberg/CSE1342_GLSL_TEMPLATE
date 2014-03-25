@@ -1,0 +1,40 @@
+﻿Build started 3/25/2014 10:57:12 AM.
+     1>Project "C:\Users\Ira\Desktop\SMU_GLSL_Template\cse5382_project_template\cse5382_project_template\cse5382_project_template.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Protobyte /I..\..\Protobyte\other_libs\FreeImage.WIN32\Dist /I..\..\Protobyte\src /I"..\..\Protobyte\other_libs\glfw-3.0.4.bin.WIN32\include" /I"..\..\Protobyte\other_libs\glew-1.10.0\glew-1.10.0\include" /I..\..\Protobyte\other_libs\glm /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Protobyte\libProtobyte\ProtoGroundPlane.cpp
+         ProtoGroundPlane.cpp
+     1>c:\users\ira\desktop\smu_glsl_template\protobyte\libprotobyte\ProtoDimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\ira\desktop\smu_glsl_template\protobyte\libprotobyte\ProtoGeomSet.h(63): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\ira\desktop\smu_glsl_template\protobyte\libprotobyte\ProtoGeom3.h(243): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ira\Desktop\SMU_GLSL_Template\cse5382_project_template\Release\cse5382_project_template.exe" /NOLOGO /LIBPATH:"..\..\Protobyte\other_libs\glfw-3.0.4.bin.WIN32\lib-msvc110" /LIBPATH:"..\..\Protobyte\other_libs\glew-1.10.0\glew-1.10.0\lib\Release\Win32" /LIBPATH:..\..\Protobyte\other_libs\FreeImage.WIN32\Dist glew32.lib opengl32.lib glu32.lib glfw3.lib freeImage.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ira\Desktop\SMU_GLSL_Template\cse5382_project_template\Release\cse5382_project_template.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ira\Desktop\SMU_GLSL_Template\cse5382_project_template\Release\cse5382_project_template.lib" /MACHINE:X86 /SAFESEH Release\ProtoBaseApp.obj
+         Release\ProtoMain.obj
+         Release\ProtoPlasm.obj
+         Release\ProtoBlock.obj
+         Release\ProtoCurve3.obj
+         Release\ProtoCylinder.obj
+         Release\ProtoFace3.obj
+         Release\ProtoFrenetFrame.obj
+         Release\ProtoGeom3.obj
+         Release\ProtoGroundPlane.obj
+         Release\ProtoLight.obj
+         Release\ProtoMath.obj
+         Release\ProtoShader.obj
+         Release\ProtoShape3.obj
+         Release\ProtoSphere.obj
+         Release\ProtoSpline3.obj
+         Release\ProtoTexture.obj
+         Release\ProtoToroid.obj
+         Release\ProtoTransformFunction.obj
+         Release\ProtoTube.obj
+         Release\ProtoUtility.obj
+         Release\ProtoVertex3.obj
+         Release\MyProg01.obj
+         Generating code
+         Finished generating code
+         cse5382_project_template.vcxproj -> C:\Users\Ira\Desktop\SMU_GLSL_Template\cse5382_project_template\Release\cse5382_project_template.exe
+     1>Done Building Project "C:\Users\Ira\Desktop\SMU_GLSL_Template\cse5382_project_template\cse5382_project_template\cse5382_project_template.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.17
