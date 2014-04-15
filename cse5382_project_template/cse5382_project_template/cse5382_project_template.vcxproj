@@ -92,7 +92,7 @@
     <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoTube.cpp" />
     <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoUtility.cpp" />
     <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoVertex3.cpp" />
-    <ClCompile Include="..\..\Protobyte\src\MyProg01.cpp" />
+    <ClCompile Include="..\..\Protobyte\src\sample_prog01.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Protobyte\appProtobyte\ProtoBaseApp.h" />
@@ -136,7 +136,11 @@
     <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVector3.h" />
     <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVector4.h" />
     <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoVertex3.h" />
-    <ClInclude Include="..\..\Protobyte\src\MyProg01.h" />
+    <ClInclude Include="..\..\Protobyte\src\sample_prog01.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Protobyte\resources\shaders\shader1.frag" />
+    <None Include="..\..\Protobyte\resources\shaders\shader1.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

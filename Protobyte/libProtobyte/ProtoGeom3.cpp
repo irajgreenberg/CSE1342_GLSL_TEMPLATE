@@ -35,11 +35,11 @@ ProtoGeom3::ProtoGeom3() {
 
 
 ProtoGeom3::ProtoGeom3(const Vec3f& pos, const Vec3f& rot, const Dim3f size, const ProtoColor4f col4) :
-ProtoShape3(pos, rot, size, col4), textureImageURL("") {
+ProtoShape3(pos, rot, size, col4), textureImageURL("white_tile.jpg") {
 }
 
 ProtoGeom3::ProtoGeom3(const Vec3f& pos, const Vec3f& rot, const Dim3f size, const std::vector< ProtoColor4f > col4s) :
-ProtoShape3(pos, rot, size, col4s), textureImageURL("") {
+ProtoShape3(pos, rot, size, col4s), textureImageURL("white_tile.jpg") {
 }
 
 
@@ -144,7 +144,7 @@ void ProtoGeom3::init() {
 	//    }
     
     // set default texture enabled state
-    isTextureEnabled = false;
+    isTextureEnabled = true;
 }
 
 void ProtoGeom3::calcFaces() {
@@ -155,7 +155,27 @@ void ProtoGeom3::calcFaces() {
 	for (int i = 0; i < inds.size(); i++) {
 		faces.push_back(ProtoFace3(&verts.at(inds.at(i).elem0), &verts.at(inds.at(i).elem1),
                                    &verts.at(inds.at(i).elem2)));
-		//std::cout << faces.at(i)[2]->pos.z << std::endl;
+
+	/*	faces2.push_back(ProtoFace3(verts.at(inds.at(i).elem0), verts.at(inds.at(i).elem1),
+			verts.at(inds.at(i).elem2)));*/
+		//packedFaces.push_back(verts.at(inds.at(i).elem0).pos.x);
+		//packedFaces.push_back(verts.at(inds.at(i).elem0).pos.y);
+		//packedFaces.push_back(verts.at(inds.at(i).elem0).pos.z);
+
+		//packedFaces.push_back(verts.at(inds.at(i).elem1).pos.x);
+		//packedFaces.push_back(verts.at(inds.at(i).elem1).pos.y);
+		//packedFaces.push_back(verts.at(inds.at(i).elem1).pos.z);
+
+		//packedFaces.push_back(verts.at(inds.at(i).elem2).pos.x);
+		//packedFaces.push_back(verts.at(inds.at(i).elem2).pos.y);
+		//packedFaces.push_back(verts.at(inds.at(i).elem2).pos.z);
+
+		//packedFaces.push_back(verts.at(inds.at(i).elem0).pos.x);
+		//packedFaces.push_back(verts.at(inds.at(i).elem0).pos.y);
+		//packedFaces.push_back(verts.at(inds.at(i).elem0).pos.z);
+		//std::cout << faces.at(i)[0]->pos << std::endl; 
+		//std::cout << faces.at(i)[1]->pos << std::endl;
+		//std::cout << faces.at(i)[2]->pos << std::endl;
 	}
 }
 
@@ -375,13 +395,14 @@ void ProtoGeom3::createTexture(){
 
         std::string url = cp + pathExtension + textureImageURL;
         // trace("url =", url);
-		 trace("image URL = ", url);
+		// trace("image URL = ", url);
         // 2. create texture
         // call this ONLY when linking with FreeImage as a static library
 #ifdef FREEIMAGE_LIB
         FreeImage_Initialise();
 #endif
-        texture = ProtoTexture(url, GL_RGB, GL_RGB, 0, 0, textureID++);
+		// trace("Texture url =", url);
+		texture = ProtoTexture(url, GL_RGB, GL_RGB, 0, 0, textureID++);
         
         //std::cout << "texture.getTextureID() = " << texture.getTextureID() << std::endl;
         

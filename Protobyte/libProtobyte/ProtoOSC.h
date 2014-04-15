@@ -22,9 +22,13 @@ This class is part of the group common (update)
 \sa NO LINK
 */
 
+#ifndef PROTO_OSC_H
+#define	PROTO_OSC_H
+
 #include <iostream>
 #include <cstring>
 #include <stdlib.h>
+#include "ProtoTuple4.h"
 
 #if defined(__BORLANDC__) // workaround for BCB4 release build intrinsics bug
 namespace std {
@@ -38,29 +42,28 @@ namespace std {
 #include "UdpSocket.h"
 
 #define PORT 7000
-class ProtoOSC : public osc::OscPacketListener {
-	/*
-	Example of two different ways to process received OSC messages using oscpack.
-	Receives the messages from the SimpleSend.cpp example.
-	*/
-protected:
-	virtual void ProcessMessage(const osc::ReceivedMessage& m,
-		const IpEndpointName& remoteEndpoint);
-};
 
-//int main(int argc, char* argv[])
-//{
-//	(void)argc; // suppress unused parameter warnings
-//	(void)argv; // suppress unused parameter warnings
+namespace ijg{
+	class ProtoOSC : public osc::OscPacketListener {
+		/*
+		Example of two different ways to process received OSC messages using oscpack.
+		Receives the messages from the SimpleSend.cpp example.
+		*/
+	protected:
+		virtual void ProcessMessage(const osc::ReceivedMessage& m,
+			const IpEndpointName& remoteEndpoint);
 
-//	ExamplePacketListener listener;
-//	UdpListeningReceiveSocket s(
-//		IpEndpointName(IpEndpointName::ANY_ADDRESS, PORT),
-//		&listener);
+	private:
+		
 
-//	std::cout << "press ctrl-c to end\n";
+	public:
+		ProtoOSC();
+		ProtoTuple4<int, int, float, float> data;
+		ProtoTuple4<int, int, float, float>  getData() const;
+		void printData();
+	
+	};
 
-//	s.RunUntilSigInt();
+}
 
-//	return 0;
-//}
+#endif // PROTO_OSC_H

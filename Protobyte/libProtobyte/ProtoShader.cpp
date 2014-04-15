@@ -82,7 +82,7 @@ void ProtoShader::init() {
     
     std::string url = ProtoUtility::getBuildPath();
     
-   std::cout << "path to shaders  url =" << url << std::endl;
+   std::cout << "path to shaders  url = ," << url << std::endl;
 
 	std::string vShaderURL;
 	std::string fShaderURL;
@@ -91,8 +91,6 @@ void ProtoShader::init() {
 	// use protobyte resources instead of project resources
 	vShaderURL = url + "\\..\\..\\Protobyte\\resources\\shaders\\"+vShader;
 	fShaderURL = url + "\\..\\..\\Protobyte\\resources\\shaders\\"+fShader;
-	trace("vShaderURL =", vShaderURL);
-	trace("fShaderURL =", fShaderURL);
 #else
 	vShaderURL = url + "/resources/shaders/" + vShader;
 	fShaderURL = url + "/resources/shaders/" + fShader;
@@ -165,7 +163,7 @@ void ProtoShader::init() {
     //Check for errors
     GLint programSuccess = GL_TRUE;
     glGetProgramiv(shader_id, GL_LINK_STATUS, &programSuccess );
-    std::cout << "programSuccess = " << programSuccess << std::endl;
+ //   std::cout << "programSuccess = " << programSuccess << std::endl;
     if( programSuccess != GL_TRUE )
     {
         printf( "Error linking program %d!\n", shader_id);

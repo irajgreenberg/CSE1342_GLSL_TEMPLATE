@@ -67,7 +67,7 @@
     <ClCompile Include="..\..\Protobyte\libProtobyte\ProtoVertex3.cpp">
       <Filter>lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Protobyte\src\MyProg01.cpp">
+    <ClCompile Include="..\..\Protobyte\src\sample_prog01.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -195,7 +195,7 @@
     <ClInclude Include="..\..\Protobyte\libProtobyte\ProtoMatrix3.h">
       <Filter>lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Protobyte\src\MyProg01.h">
+    <ClInclude Include="..\..\Protobyte\src\sample_prog01.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
@@ -209,5 +209,9 @@
     <Filter Include="src">
       <UniqueIdentifier>{fee2493c-71a8-4370-8453-2093177cd5b0}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Protobyte\resources\shaders\shader1.frag" />
+    <None Include="..\..\Protobyte\resources\shaders\shader1.vert" />
   </ItemGroup>
 </Project>

@@ -15,6 +15,8 @@
 
 
 
+//
+
 #include <memory>
 
 // include GLM
@@ -24,10 +26,13 @@
 #include "glm/gtx/transform2.hpp"
 
 
+//#include <iostream>
+//#include "ProtoPlasm.h"
 #include "libProtobyte/ProtoDimension2.h"
 #include "libProtobyte/ProtoDimension3.h"
 #include "libProtobyte/ProtoGroundPlane.h"
 #include "libProtobyte/ProtoShader.h"
+#include "libProtobyte/ProtoWorld.h"
 #include "libProtobyte/ProtoColor3.h"
 #include "libProtobyte/ProtoColor4.h"
 #include "libProtobyte/ProtoMath.h"
@@ -39,7 +44,9 @@
 #include "libProtobyte/ProtoTube.h"
 #include "libProtobyte/ProtoLight.h"
 #include "libProtobyte/ProtoCore.h"
+#include "libProtobyte/ProtoTuple4.h"
 
+#include "libProtobyte/ProtoJuncusEffusus.h"
 
 // preproc dir for relative resource loading
 // from http://stackoverflow.com/questions/143174/how-do-i-get-the-directory-that-a-program-is-running-from
@@ -57,6 +64,7 @@
 
 #define BUFFER_OFFSET(i) ((void*)(i))
 #include <iostream>
+#include <stack>
 
 namespace ijg {
 	class Protoplasm; // forward declare
@@ -67,22 +75,27 @@ namespace ijg {
 
 	public:
 		ProtoBaseApp();
-		// void setAppWindowDetails(int appWidth, int appHeight, std::string appTitle);
 
 	private:
 		// only needed to be called by ProtoPlasm class - a friend
-		//void setWorld(std::unique_ptr<ProtoWorld> world);
-		//void runWorld();
+		void setWorld(std::unique_ptr<ProtoWorld> world);
+		void runWorld();
 		// don't let users touch this after context is created
 		void setWidth(int canvasWidth);
 		void setHeight(int canvasHeight);
 		void setSize(const Dim2i& canvasSize);
 
+		void _init();
+		void _initUniforms();
+		void _run();
+		// void concat(); moved down for testing
+
 	protected:
+		void concat();
 		/************************************
 		 **********     FIELDS     **********
 		 ***********************************/
-		//std::unique_ptr<ProtoWorld> world;
+		std::unique_ptr<ProtoWorld> world;
 		int appWidth;
 		int appHeight;
 		std::string appTitle;
@@ -119,6 +132,15 @@ namespace ijg {
 			LIGHT_7
 		};
 
+		enum Format {
+			STL,
+			TXT,
+			RTF
+		};
+
+		// shader
+		ProtoShader shader;
+		
 		//ProtoLight light0, light1, light2, light3, light4, light5, light6, light7;
 		//std::shared_ptr<ProtoLight> lights[8];
 
@@ -150,14 +172,18 @@ namespace ijg {
 		GLuint L_MVP_U; // only for Light perspective
 		GLuint shadowMapTex; // id for shadermap texture
 
-		// Uniform Lighting location vars
-		GLuint lightPos0_U, lightPos1_U, lightPos2_U, lightPos3_U, lightPos4_U, lightPos5_U, lightPos6_U, lightPos7_U;
-		GLuint lightDiffuse0_U, lightDiffuse1_U, lightDiffuse2_U, lightDiffuse3_U, lightDiffuse4_U, lightDiffuse5_U, lightDiffuse6_U, lightDiffuse7_U;
-		GLuint lightSpecular0_U, lightSpecular1_U, lightSpecular2_U, lightSpecular3_U, lightSpecular4_U, lightSpecular5_U, lightSpecular6_U, lightSpecular7_U;
-		GLuint lightAmbient0_U, lightAmbient1_U, lightAmbient2_U, lightAmbient3_U, lightAmbient4_U, lightAmbient5_U, lightAmbient6_U, lightAmbient7_U;
-		GLuint lightEmissive0_U, lightEmissive1_U, lightEmissive2_U, lightEmissive3_U, lightEmissive4_U, lightEmissive5_U, lightEmissive6_U, lightEmissive7_U;
-		GLuint lightReflectionConst0_U, lightReflectionConst1_U, lightReflectionConst2_U, lightReflectionConst3_U, lightReflectionConst4_U, lightReflectionConst5_U, lightReflectionConst6_U, lightReflectionConst7_U;
-		GLuint lightIntensity0_U, lightIntensity1_U, lightIntensity2_U, lightIntensity3_U, lightIntensity4_U, lightIntensity5_U, lightIntensity6_U, lightIntensity7_U;
+		std::stack <glm::mat4> matrixStack;
+
+
+		
+		// Uniform Lighting location vars - replace above
+		struct Light_U {
+			GLuint position;
+			GLuint diffuse;
+			GLuint ambient;
+			GLuint specular;;
+		};
+		Light_U lights_U[8];
 		//END
 
 		// Shadow Map
@@ -191,17 +217,17 @@ namespace ijg {
 		int getFrameCount() const;
 
 		// Add content to world
-		//void add(std::unique_ptr<ProtoGeom3> geom);
+		void add(std::unique_ptr<ProtoGeom3> geom);
 		//void add(std::unique_ptr<ProtoLight> lt);
 		//void add(std::shared_ptr<ProtoLight> lt);
-		//void add(std::unique_ptr<ProtoCamera> cam);
+		void add(std::unique_ptr<ProtoCamera> cam);
 		//void initWorld();
 
 		// set background color
 		void setBackground(float r, float g, float b);
 		void setBackground(float c);
 		void setBackground(const Col3f& col);
-		void setBackground(const Col4f& col);
+		void setBackground(const ProtoColor4<float>& col);
 
 		// get window properties **READ ONLY**
 		int getWidth()const;
@@ -214,12 +240,28 @@ namespace ijg {
 		// shaders stuff
 		void GLSLInfo(ProtoShader* shader);
 			
-		// START get all uniform shaders;
-		virtual void initUniforms(); // virtual for now
 
 		// LIGHTS
 		void lightsOn();
 		void lightsOff();
+
+		//// create traditional interface for GPU controlled transforms
+		void translate(float tx, float ty, float tz);
+		void translate(const Vec3f& tXYZ);
+		void rotate(float angle, float axisX, float axisY, float axisZ);
+		void rotate(float angle, const Vec3f& rXYZ);
+		void scale(float s);
+		void scale(float sx, float sy, float sz);
+		void scale(const Vec3f& sXYZ);
+		//implements transform matrix stack
+		void push();
+		void pop();
+
+		//void lookAt(const Vec3f& eye, const Vec3f& center, const Vec3f& up);
+		//void perspective(float viewAngle, float aspect, float nearDist, float farDist);
+
+		// exporting
+		void export(std::vector<Tup4v> vs, Format type);
 
 		// CAMERAS
 
@@ -237,6 +279,16 @@ namespace ijg {
 			CORNER_BL,
 			RANDOM
 		};
+
+
+		// saving stuff
+		virtual void render(int scaleFactor = 1) = 0; // evntually maybe make pure virtual (ehhh, maybe not)
+		void save(std::string name = "img", int scaleFactor = 1);
+		//void saveTiles(int rows, int columns);
+		bool stitchTiles(std::string url, int tiles);
+		
+
+
 
 		void rect(float x, float y, float w, float h, Registration reg = CORNER);
 		void rect(Vec2 pt0, Vec2 pt1, Registration reg = CORNER);
@@ -269,12 +321,13 @@ namespace ijg {
 #define WIREFRAME ProtoGeom3::WIREFRAME
 #define SURFACE ProtoGeom3::SURFACE
 
-#define pushMatrix glPushMatrix
-#define popMatrix glPopMatrix
-
-#define translatef glTranslatef
-#define rotatef glRotatef 
-#define scalef glScalef 
+// remove this old stuff
+//#define pushMatrix glPushMatrix
+//#define popMatrix glPopMatrix
+//
+//#define translatef glTranslatef
+//#define rotatef glRotatef 
+//#define scalef glScalef 
 
 #define light0 lights.at(0)
 #define light1 lights.at(1)
